@@ -20,8 +20,8 @@ class DataProcessing:
         labels = df.iloc[:, 0].values
         features = df[list(selected_columns)].values
 
-        X_train, X_test = self.split_date(features)
-        Y_train, Y_test = self.split_date(labels)
+        X_train, X_test = self.split_data(features)
+        Y_train, Y_test = self.split_data(labels)
 
         self.save_np(X_train, Y_train, X_test, Y_test)
 
@@ -33,11 +33,11 @@ class DataProcessing:
         return columns
     
     # TODO select heat map with or without class
-    def plot_heat_map(self, size, values):
+    def plot_heat_map(self, values, size=10):
         plt.figure(figsize=(size, size))
         return sns.heatmap(values.iloc[:, 1:].corr(), annot=True)
 
-    def split_date(self, data, percent=0.8):
+    def split_data(self, data, percent=0.8):
         index = int(percent * len(data))
         return data[:index], data[index:]
 
