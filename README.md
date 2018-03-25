@@ -1,9 +1,9 @@
-# Classigyin Wine with Keras 
+# Classifying Wine with Keras 
 
 ### URL Dataset
 [Wine Data set](https://archive.ics.uci.edu/ml/datasets/wine), from UCI - Machine Learning Repository
 
-### Presentation about Keras with implementation\n
+### Presentation about Keras with implementation
 [Workshop about TensorFlow and Keras](https://luiseduardogfranca.github.io/workshop-tensorflow/)
 
 ### URL of the Jupyter Notebook
