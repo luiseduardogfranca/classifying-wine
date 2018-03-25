@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt 
 
 class DataProcessing: 
-
+    df = ""
     def processing(self, file, column_amount):
 
         columns = self.create_table_label(column_amount)
@@ -25,6 +25,8 @@ class DataProcessing:
 
         self.save_np(X_train, Y_train, X_test, Y_test)
 
+        return df 
+
     def create_table_label(self, attribute_amount):
         columns = [i - 1 for i in range(1,attribute_amount + 1)]
         columns[0] = "Class"
@@ -33,7 +35,7 @@ class DataProcessing:
     # TODO select heat map with or without class
     def plot_heat_map(self, size, values):
         plt.figure(figsize=(size, size))
-        sns.heatmap(df.iloc[:, 1:].corr(), annot=True)
+        return sns.heatmap(values.iloc[:, 1:].corr(), annot=True)
 
     def split_date(self, data, percent=0.8):
         index = int(percent * len(data))
